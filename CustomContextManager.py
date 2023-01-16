@@ -15,7 +15,7 @@ class CustomContextManager:
             self.commandDir()
         if self.commands[:3] == 'cd ':
             self.commandCd()
-        if self.commands[:5] == 'cd..':
+        if self.commands[:5] == 'cd.. ':
             self.commandCdpp()
         if self.commands[:5] == 'open ':
             self.commandOpen()
@@ -55,7 +55,7 @@ class CustomContextManager:
         self.setRoad(os.path.join(self.road, name))
 
     def commandCdpp(self):
-        print('cd..')
+        self.road = os.path.split(self.road)
 
     def commandOpen(self):
         print('open')
