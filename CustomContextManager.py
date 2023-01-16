@@ -55,7 +55,8 @@ class CustomContextManager:
         self.setRoad(os.path.join(self.road, name))
 
     def commandCdpp(self):
-        self.road = os.path.split(self.road)
+        name = self.commands[5:]
+        self.setRoad(os.path.split(self.road)[0])
 
     def commandOpen(self):
         print('open')
