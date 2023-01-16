@@ -4,11 +4,11 @@ import os
 class CustomContextManager:
     s = 'C:\\'
     commands = ''
-    road:tsr
+    road = ''
 
     def __init__(self):
         commands = input(self.getS() + self.getRoad() + '>')
-        self.commands = commands
+        self.setCommands(commands)
 
     def __enter__(self):
         if self.commands[:4] == 'dir':
@@ -38,6 +38,9 @@ class CustomContextManager:
     def getRoad(self) -> str:
         return self.road
 
+    def setRoad(self, road: str):
+        self.road = road
+
     def getS(self):
         return self.s
 
@@ -49,8 +52,7 @@ class CustomContextManager:
 
     def commandCd(self):
         name = self.commands[3:]
-        self.road = os.path.join(self.s, self.road, name)
-        print(self.road)
+        self.setRoad(os.path.join(self.road, name))
 
     def commandCdpp(self):
         print('cd..')
@@ -60,7 +62,7 @@ class CustomContextManager:
 
     def commandMkdir(self):
         try:
-            os.mkdir(self.getS()+self.getRoad() + self.commands[6:])
+            os.mkdir(self.getS() + self.getRoad() + self.commands[6:])
         except FileExistsError:
             print(f'Подпапка или файл  {self.commands[6:]} уже существует.')
 
