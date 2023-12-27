@@ -28,5 +28,5 @@
 
 ## Contacts
 
-- gmail: dilnazbaidakhanova@gmail.com
-- telegram: @dillnazzza
+- Email: dilnazbaidakhanova@gmail.com
+- Telegram: @dillnazzza
