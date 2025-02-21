@@ -25,8 +25,3 @@
 3. **Просмотр результатов:**
 
    - Следуйте инструкциям и ожидайте результатов выполнения команды.
-
-## Contacts
-
-- Email: dilnazbaidakhanova@gmail.com
-- Telegram: @dillnazzza
