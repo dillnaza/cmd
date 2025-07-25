@@ -3,7 +3,6 @@ import datetime
 
 s = 'C:\\'
 
-
 def commandDir(s: str):
     count_file = 0
     count_dir = 0
@@ -26,7 +25,6 @@ def commandDir(s: str):
         print('            ', count_file, 'файлов', size_file, 'байт')
         print('            ', count_dir, 'папок', size_dir, 'байт')
 
-
 def commandCd(command: str, s: str) -> str:
     s = os.path.join(s, command)
     if os.path.isfile(s):
@@ -45,11 +43,9 @@ def commandCd(command: str, s: str) -> str:
             print('Системе не удается найти указанный путь.')
     return s
 
-
 def commandCdpp(s: str) -> str:
     s = os.path.split(s)[0]
     return s
-
 
 def commandOpen(command: str):
     try:
@@ -58,13 +54,11 @@ def commandOpen(command: str):
     except FileNotFoundError:
         print('Системе не удается найти указанный путь.')
 
-
 def commandMkdir(command: str):
     try:
         os.mkdir(s + '\\' + command)
     except FileExistsError:
         print(f'Подпапка или файл  {command} уже существует.')
-
 
 def commandRmdir(command: str):
     try:
@@ -72,14 +66,12 @@ def commandRmdir(command: str):
     except FileNotFoundError:
         print(f'Не удается найти указанный файл.')
 
-
 def commandRename(command: str):
     name_old, name_new = command.split()
     try:
         os.rename(s + '\\' + name_old, s + '\\' + name_new)
     except FileNotFoundError:
         print(f'Не удается найти указанный файл.')
-
 
 while True:
     command = input(s + '>')
